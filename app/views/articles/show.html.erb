@@ -1,0 +1,15 @@
+<p style="color: green"><%= notice %></p>
+<%= render @article %>
+<div>
+  <%= link_to "Edit this article", edit_article_path(@article) %> |
+  <%= link_to "Back to articles", articles_path %>
+  <%= button_to "Delete",
+                  article_path(@article),
+                  method: :delete,
+                  class: "button tight danger",
+                  form: { 
+                   data: { 
+                     turbo_confirm: "Are you sure you want delete?"
+                   }
+                  } %>
+</div>
