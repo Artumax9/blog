@@ -6,10 +6,13 @@
   <%= button_to "Delete",
                   article_path(@article),
                   method: :delete,
-                  class: "button tight danger",
-                  form: { 
-                   data: { 
-                     turbo_confirm: "Are you sure you want delete?"
-                   }
+                  class: "button danger",
+                  form: {
+                    data: {
+                      turbo: false,
+                      controller: "confirmation",
+                      action: 'submit->confirmation#confirm',
+                      confirmation_message_value: "Are you sure you want to delete?",
+                    }
                   } %>
 </div>
